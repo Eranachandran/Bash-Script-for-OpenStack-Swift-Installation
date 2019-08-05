@@ -57,9 +57,9 @@ sed -i -e  "s/^\(bind-address\s*=\).*/\1 $ip/" /etc/mysql/mariadb.conf.d/50-serv
 #Restart the database service
 service mysql restart
 
-#####Delete anonymous users and  SET plugin = 'mysql_native_password' starts######
+#####Delete anonymous users and  SET plugin = mysql_native_password starts######
 
-echo "UPDATE mysql.user SET Password=PASSWORD('my_new_password') WHERE User='root';" | mysql
+echo "UPDATE mysql.user SET Password=PASSWORD('$maria_db_root_password') WHERE User='root';" | mysql
 echo "DELETE FROM mysql.user WHERE User='';" | mysql
 echo "UPDATE mysql.user SET plugin = 'mysql_native_password' WHERE User = 'root';" | mysql
 echo "FLUSH PRIVILEGES;" | mysql
@@ -250,11 +250,11 @@ sed -i -e  "s/^\(\s*'LOCATION'\s*:\).*/\1 '$ip:11211', /" /etc/openstack-dashboa
 service apache2 reload
 }
 
-######MariaDB Credentials Starts ######
+#######MariaDB Credentials Starts ######
 maria_db_user="root"
 
 #selecting new passsword for maria db root user
-maria_db_root_password="Er@nachandran"
+maria_db_root_password="pyronoidninja"
 
 maria_db_port="3306"
 maria_db_connect="mysql -h localhost -u$maria_db_user -p$maria_db_root_password --port=$maria_db_port"
