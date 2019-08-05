@@ -6,7 +6,7 @@ Mail : eranachandrane@gmail.com
 Date : 05-08-2019
 
 
-Description: This bash script will install the Stein version of OpenStack with the keystone,glance,Swift and Horizon Services
+Description: This bash script will install the Stein version of OpenStack with the keystone,Swift and Horizon Services
 
 Script type - Ubuntu Shell Script
 
