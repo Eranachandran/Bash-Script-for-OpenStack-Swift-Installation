@@ -19,7 +19,7 @@ Bash-Script-for-OpenStack-Swift-Installation
 Script Usage
 Download and execute Source Code by as follows
 
-git clone https://github.com/Eranachandran/Bash-Script-for-OpenStack-Stein-Installation.git
+git clone https://github.com/Eranachandran/Bash-Script-for-OpenStack-Swift-Installation.git
 
 cd Bash-Script-for-OpenStack-Swift-Installation
 
