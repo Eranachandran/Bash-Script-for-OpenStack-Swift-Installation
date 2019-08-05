@@ -1,8 +1,10 @@
-Author: Eranachandran
+# Author: Eranachandran
+
 Mail : eranachandrane@gmail.com
 
-Website : http://pyronoidninja.com/
+# Website : http://pyronoidninja.com/
 Date : 05-08-2019
+
 
 Description: This bash script will install the Stein version of OpenStack with the keystone,glance,Swift and Horizon Services
 
