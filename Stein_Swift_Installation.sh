@@ -176,15 +176,15 @@ function swift_install()
 mkdir -p /etc/swift
 cp ./conf_files/proxy-server.conf /etc/swift/proxy-server.conf
 cp ./conf_files/rsyncd.conf /etc/rsyncd.conf
-sed -i -e  's/^\(address\s*=\).*/\1 '$ip'/' rsyncd.conf
+sed -i -e  's/^\(address\s*=\).*/\1 '$ip'/' /etc/rsyncd.conf
 sed -i -e 's/RSYNC_ENABLE=false/RSYNC_ENABLE=true/g' /etc/default/rsync
 service rsync start
 cp ./conf_files/account-server.conf /etc/swift/account-server.conf
-sed -i -e  's/^\(bind_ip\s*=\).*/\1 '$ip'/' account-server.conf
+sed -i -e  's/^\(bind_ip\s*=\).*/\1 '$ip'/' /etc/swift/account-server.conf
 cp ./conf_files/container-server.conf /etc/swift/container-server.conf
-sed -i -e  's/^\(bind_ip\s*=\).*/\1 '$ip'/' container-server.conf
+sed -i -e  's/^\(bind_ip\s*=\).*/\1 '$ip'/' /etc/swift/container-server.conf
 cp ./conf_files/object-server.conf /etc/swift/object-server.conf
-sed -i -e  's/^\(bind_ip\s*=\).*/\1 '$ip'/' object-server.conf
+sed -i -e  's/^\(bind_ip\s*=\).*/\1 '$ip'/' /etc/swift/object-server.conf
 cp ./conf_files/swift.conf /etc/swift/swift.conf
 
 . admin-openrc
@@ -194,7 +194,7 @@ openstack service create --name swift --description "OpenStack Object Storage" o
 openstack endpoint create --region RegionOne object-store public http://controller:8080/v1/AUTH_%\(project_id\)s
 openstack endpoint create --region RegionOne object-store internal http://controller:8080/v1/AUTH_%\(project_id\)s
 openstack endpoint create --region RegionOne object-store admin http://controller:8080/v1
-mkfs.xfs /dev/$object_storage_disk
+mkfs.xfs -f /dev/$object_storage_disk
 mkdir -p /srv/node/$object_storage_disk
 echo "/dev/$object_storage_disk /srv/node/$object_storage_disk xfs noatime,nodiratime,nobarrier,logbufs=8 0 2" >> /etc/fstab
 mount /srv/node/$object_storage_disk
