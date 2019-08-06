@@ -170,7 +170,7 @@ openstack --os-auth-url http://controller:5000/v3 \
   --os-project-name myproject --os-username myuser --os-password MYUSER_PASS token issue
 }
 
-function swift()
+function swift_install()
 {
 #copy preconfig file
 mkdir -p /etc/swift
@@ -287,7 +287,7 @@ chrony
 rabbitmq
 memcached
 keystone
-swift
+swift_install
 horizon
 
 #######OpenStack Stein Installation ends  ##############
