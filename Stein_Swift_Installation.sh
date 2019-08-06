@@ -209,7 +209,6 @@ chown -R root:swift /var/cache/swift
 chmod -R 775 /var/cache/swift
 
 #account ring creation
-cd /etc/swift
 swift-ring-builder account.builder create 10 1 1
 swift-ring-builder account.builder add --region 1 --zone 1 --ip $ip --port 6202 --device $object_storage_disk --weight 100
 swift-ring-builder account.builder
