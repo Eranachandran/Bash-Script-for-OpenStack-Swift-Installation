@@ -226,6 +226,9 @@ swift-ring-builder object.builder add --region 1 --zone 1 --ip $ip --port 6200 -
 swift-ring-builder object.builder
 swift-ring-builder object.builder rebalance
 
+#Distribute ring configuration files
+cp account.ring.gz container.ring.gz object.ring.gz /etc/swift
+
 #On all nodes, ensure proper ownership of the configuration directory
 chown -R root:swift /etc/swift
 service memcached restart
