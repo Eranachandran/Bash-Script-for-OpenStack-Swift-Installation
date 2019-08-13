@@ -237,7 +237,7 @@ service swift-proxy restart
 swift-init all start
 
 #Swift Verification
-. demo-openrc
+. admin-openrc
 swift stat
 }
 
