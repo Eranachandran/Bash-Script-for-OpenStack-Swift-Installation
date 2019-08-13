@@ -175,6 +175,7 @@ function swift_install()
 #copy preconfig file
 mkdir -p /etc/swift
 cp ./conf_files/proxy-server.conf /etc/swift/proxy-server.conf
+cp ./conf_files/proxy-server.conf /etc/swift/internal-client.conf
 cp ./conf_files/rsyncd.conf /etc/rsyncd.conf
 sed -i -e  's/^\(address\s*=\).*/\1 '$ip'/' /etc/rsyncd.conf
 sed -i -e 's/RSYNC_ENABLE=false/RSYNC_ENABLE=true/g' /etc/default/rsync
