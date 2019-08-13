@@ -24,5 +24,7 @@ git clone https://github.com/Eranachandran/Bash-Script-for-OpenStack-Swift-Insta
 cd Bash-Script-for-OpenStack-Swift-Installation
 
 bash Stein_Swift_Installation.sh <object_storage_disk_name>
+Example: Stein_Swift_Installation.sh sdc
+Note: <object_storage_disk_name> is the disk where you want install object storage
 
 This Script is tested with Ubuntu 18.04 LTS
